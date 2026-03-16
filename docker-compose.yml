@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: school_db_container
+    environment:
+      POSTGRES_USER: school_db_user
+      POSTGRES_PASSWORD: school_db_password
+      POSTGRES_DB: school_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
